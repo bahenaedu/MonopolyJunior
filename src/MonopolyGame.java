@@ -5,11 +5,12 @@ public class MonopolyGame {
 	private Random random;
 	private LooseChange lc;
 	private ChanceDeck chanceCardDeck;
+	protected Player player1, player2;
 
 
 	public MonopolyGame() {
-		Player player1 = new Player("Lalo");
-		Player player2 = new Player("Loli");
+		player1 = new Player("Lalo");
+		player2 = new Player("Loli");
 	}
 
 	public void play() {

@@ -19,7 +19,7 @@ public class Player {
 		return bankAccount;
 	}
 
-	public int newPosition (int rolledNum)
+	public int newPosition (int rolledNum) //when you rolled the dice, for the new position
 	{
 		currentPosit = currentPosit + rolledNum;
 		return currentPosit;
