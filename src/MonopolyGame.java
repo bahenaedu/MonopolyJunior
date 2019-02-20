@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class MonopolyGame {
-	private MonopolySquare[] board;
+	private MonopolySquare[] board = {new Tax("idk name")};
 	private Random random;
 	private LooseChange lc;
 	private ChanceDeck chanceCardDeck;
