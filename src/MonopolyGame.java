@@ -20,8 +20,7 @@ public class MonopolyGame {
 	public int rollDices()
 	{
 		int dice1 = random.nextInt(6) + 1;
-		int dice2 = random.nextInt(6) + 1;
 
-		return dice1 + dice2;
+		return dice1;
 	}
 }
