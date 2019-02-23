@@ -15,6 +15,7 @@ public class Tax extends MonopolySquare {
 
         if(afterTax <= 0)
         {
+            System.out.println("Opps, out of money!. You lost");
             throw new BankruptException("Opps, out of money!");
         }
         else

@@ -22,16 +22,17 @@ public class MonopolyGame {
 			new Property("Cotton Candy Stand", "Blue", 31)
 	};
 	private Random random = new Random();
-	private ChanceDeck chanceCardDeck;
+	private ChanceDeck chanceCardDeck = new ChanceDeck();
 	protected Player player1, player2;
-	private LooseChange l;
+	private LooseChange looseChange;
 	private int counter = 0;
 
 
 	public MonopolyGame() {
 		player1 = new Player("Lalo");
 		player2 = new Player("Loli");
-		l = new LooseChange();
+		looseChange = new LooseChange();
+
 	}
 
 	public void play() {
@@ -42,13 +43,66 @@ public class MonopolyGame {
 
 				if (player1.getTurn())
 				{
-					player1.setCurrentPosit(this.rollDices());
-					System.out.println(player1.getCurrentPosit());
-					board[1].landOn(player1, player2, chanceCardDeck, l);
+					System.out.println("It is " + player1.getName() + "'s turn");
+					int dicePlayer1 = rollDices();
+					System.out.println(dicePlayer1 + " is what " + player1.getName() + " rolled");
+					player1.setPositAfterRolledDice(dicePlayer1);
+					if (player1.getPosit() <= 31)
+					{
+						System.out.println(board[player1.getPosit()].toString());
+						board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
+						//System.out.println(player1.getPosit() + " Position");
+						//System.out.println("Still under or equal 31\n");
+					}
+					else if (player1.getPosit() == 32)
+					{
+						player1.setPosit(0);
+						System.out.println(board[player1.getPosit()].toString());
+						board[player1.getPosit()].landOn(player1, player2, chanceCardDeck, looseChange);
+						//System.out.println(player1.getPosit());
+						//System.out.println("First square\n");
+					}
+					else
+					{
+						int newPosIt = player1.getPosit() - 32;
+						player1.setPosit(newPosIt);
+						System.out.println(board[player1.getPosit()].toString());
+						board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
+						//System.out.println(player1.getPosit() + " Position");
+						//System.out.println("Over 31\n");
+					}
+
 				}
 				else if (player2.getTurn())
 				{
-					System.out.println("Player 2");
+					System.out.println("It is " + player2.getName() + "'s turn");
+					int dicePlayer2 = rollDices();
+					System.out.println(dicePlayer2 + " what " + player2.getName() + " rolled");
+					player2.setPositAfterRolledDice(dicePlayer2);
+					if (player2.getPosit() <= 31)
+					{
+						System.out.println(board[player2.getPosit()].toString());
+						board[player2.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
+						//System.out.println(player2.getPosit() + " Position");
+						//System.out.println("Still under 31\n");
+					}
+					else if (player2.getPosit() == 32) //in case it lands in the first square
+					{
+						player2.setPosit(0);
+						System.out.println(board[player2.getPosit()].toString());
+						board[player2.getPosit()].landOn(player1, player2, chanceCardDeck, looseChange);
+						//System.out.println(player2.getPosit());
+						//System.out.println("First square\n");
+					}
+					else
+					{
+						int newPosIt = player2.getPosit() - 32;
+						player2.setPosit(newPosIt);
+						System.out.println(board[player2.getPosit()].toString());
+						board[player2.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
+						//System.out.println(player2.getPosit() + " Position");
+						//System.out.println("Over 31\n");
+					}
 				}
 
 			}

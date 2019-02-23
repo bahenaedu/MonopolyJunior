@@ -4,23 +4,23 @@ public class Player {
 	private int bankAccount;
 	private String name;
 	private boolean isTurn;
-	private int currentPosit;
+	private int posit;
 
 	private ArrayList<Integer> owenedPropeties;
 
 	public Player(String n){
 		name = n;
 		bankAccount = 31;
-		currentPosit = 0;
+		posit = 0;
 		isTurn = false;
 	}
 
 
-	public int getCurrentPosit() {
-		return currentPosit;
+	public int getPosit() {
+		return posit;
 	}
-	public void setCurrentPosit(int currentPosit) {
-		this.currentPosit += currentPosit;
+	public void setPosit(int currentPosit) {
+		this.posit = currentPosit;
 	}
 	public void setBankAccount(int bankAccount) {
 		this.bankAccount = bankAccount;
@@ -37,6 +37,14 @@ public class Player {
 		return this.isTurn;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setPositAfterRolledDice (int newPosition)
+	{
+		posit += newPosition;
+	}
 
 
 	/* you will add several methods to this class as needed.*/
