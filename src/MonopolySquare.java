@@ -10,7 +10,7 @@ public abstract class MonopolySquare {
 		return name;
 	}
 
-	public abstract void landOn(Player P, LooseChange L) throws BankruptException;
+	public abstract void landOn(Player P1, Player P2, ChanceDeck chanceDeck, LooseChange looseChange) throws BankruptException;
 	//Note 1:   this method is abstract.   We are going to defer
 	//implementation to the next generation (the classes that extend
 	// this class).    Since there are abstract methods in this class,

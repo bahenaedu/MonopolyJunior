@@ -5,6 +5,7 @@ public class Player {
 	private String name;
 	private boolean isTurn;
 	private int currentPosit;
+
 	private ArrayList<Integer> owenedPropeties;
 
 	public Player(String n){
@@ -14,17 +15,12 @@ public class Player {
 		isTurn = false;
 	}
 
-	public int newPosition (int rolledNum) //when you rolled the dice, for the new position
-	{
-		currentPosit = currentPosit + rolledNum;
-		return currentPosit;
-	}
 
 	public int getCurrentPosit() {
 		return currentPosit;
 	}
 	public void setCurrentPosit(int currentPosit) {
-		this.currentPosit = currentPosit;
+		this.currentPosit += currentPosit;
 	}
 	public void setBankAccount(int bankAccount) {
 		this.bankAccount = bankAccount;
@@ -32,6 +28,16 @@ public class Player {
 	public int getBankAccount() {
 		return bankAccount;
 	}
+
+	public void setTurn(boolean turn){
+		this.isTurn = turn;
+	}
+
+	public boolean getTurn(){
+		return this.isTurn;
+	}
+
+
 
 	/* you will add several methods to this class as needed.*/
 

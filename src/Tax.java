@@ -9,9 +9,9 @@ public class Tax extends MonopolySquare {
     }
 
     @Override
-    public void landOn(Player P, LooseChange L) throws BankruptException
+    public void landOn(Player P1, Player P2, ChanceDeck chanceDeck, LooseChange looseChange) throws BankruptException
     {
-        int afterTax = P.getBankAccount() - payTax;
+        int afterTax = P1.getBankAccount() - payTax;
 
         if(afterTax <= 0)
         {
@@ -19,7 +19,7 @@ public class Tax extends MonopolySquare {
         }
         else
         {
-            P.setBankAccount(afterTax);
+            P1.setBankAccount(afterTax);
         }
     }
 

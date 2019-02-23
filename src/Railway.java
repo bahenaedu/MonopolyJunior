@@ -9,8 +9,7 @@ public class Railway extends MonopolySquare {
     }
 
     @Override
-    public void landOn(Player P, LooseChange L) throws BankruptException
-    {
+    public void landOn(Player P1, Player P2, ChanceDeck chanceDeck, LooseChange looseChange) throws BankruptException {
 
     }
 
