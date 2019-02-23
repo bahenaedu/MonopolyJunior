@@ -1,13 +1,15 @@
 public class Tax extends MonopolySquare {
 
     private int payTax = 2;
+    private int squareNum;
 
-    public Tax (String name){
+    public Tax (String name, int num){
         super(name);
+        this.squareNum = num;
     }
 
     @Override
-    public void landOn(Player P) throws BankruptException
+    public void landOn(Player P, LooseChange L) throws BankruptException
     {
         int afterTax = P.getBankAccount() - payTax;
 
@@ -19,5 +21,10 @@ public class Tax extends MonopolySquare {
         {
             P.setBankAccount(afterTax);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "You landed on " + name;
     }
 }

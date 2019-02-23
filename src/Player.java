@@ -1,22 +1,17 @@
+import java.util.ArrayList;
+
 public class Player {
 	private int bankAccount;
 	private String name;
 	private boolean isTurn;
 	private int currentPosit;
+	private ArrayList<Integer> owenedPropeties;
 
 	public Player(String n){
 		name = n;
 		bankAccount = 31;
 		currentPosit = 0;
 		isTurn = false;
-	}
-
-	public void setBankAccount(int bankAccount) {
-		this.bankAccount = bankAccount;
-	}
-
-	public int getBankAccount() {
-		return bankAccount;
 	}
 
 	public int newPosition (int rolledNum) //when you rolled the dice, for the new position
@@ -30,6 +25,12 @@ public class Player {
 	}
 	public void setCurrentPosit(int currentPosit) {
 		this.currentPosit = currentPosit;
+	}
+	public void setBankAccount(int bankAccount) {
+		this.bankAccount = bankAccount;
+	}
+	public int getBankAccount() {
+		return bankAccount;
 	}
 
 	/* you will add several methods to this class as needed.*/
