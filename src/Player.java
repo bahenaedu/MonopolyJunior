@@ -1,3 +1,4 @@
+import java.awt.desktop.SystemEventListener;
 import java.util.ArrayList;
 
 public class Player {
@@ -5,14 +6,16 @@ public class Player {
 	private String name;
 	private boolean isTurn;
 	private int posit;
-
-	private ArrayList<Integer> owenedPropeties;
+	protected ArrayList<Integer> ownedProperties;
+	protected ArrayList<String> colorOfProperty;
+	protected ArrayList<String> nameOfProperty;
 
 	public Player(String n){
 		name = n;
 		bankAccount = 31;
 		posit = 0;
 		isTurn = false;
+		ownedProperties = new ArrayList<>();
 	}
 
 
@@ -44,6 +47,28 @@ public class Player {
 	public void setPositAfterRolledDice (int newPosition)
 	{
 		posit += newPosition;
+	}
+
+	public void addMoney(int amount)
+	{
+		this.bankAccount += bankAccount + amount;
+	}
+
+	public void addProperty (int numOfProperty)
+	{
+		ownedProperties.add(numOfProperty);
+	}
+
+	public boolean checkForProperty (int newProperty)
+	{
+		for(int x = 0; x < this.ownedProperties.size(); x++)
+		{
+			if (this.ownedProperties.get(x).equals(newProperty))
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 
