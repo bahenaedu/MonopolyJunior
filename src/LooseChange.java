@@ -6,15 +6,20 @@ public class LooseChange {
 		balance = 0;
 	}
 
-	public void setBalance (int plusAmount)
+	public void setPlusBalance (int plusAmount)
 	{
 		balance =+ plusAmount;
 
 	}
 
-	public void takeAll (Player p)
+	public void setBalance (int newBalance)
 	{
-		p.setBankAccount(balance);
+		this.balance = newBalance;
+	}
+
+	public int getBalance ()
+	{
+		return this.balance;
 	}
 
 	/*Add some methods here*/

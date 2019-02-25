@@ -1,3 +1,5 @@
+import java.awt.desktop.SystemEventListener;
+
 public class GoSquare extends MonopolySquare {
 
     private int squareNum;

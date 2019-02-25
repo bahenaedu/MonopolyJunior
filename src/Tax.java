@@ -22,6 +22,7 @@ public class Tax extends MonopolySquare {
             }
             else
             {
+                looseChange.setPlusBalance(payTax);
                 P1.setBankAccount(afterTax);
             }
         }
@@ -36,6 +37,7 @@ public class Tax extends MonopolySquare {
             }
             else
             {
+                looseChange.setPlusBalance(payTax);
                 P2.setBankAccount(afterTax);
             }
         }
