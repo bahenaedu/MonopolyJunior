@@ -10,7 +10,9 @@ public class Property extends MonopolySquare {
         this.propertyColor = color;
     }
 
-    @Override
+    @Override //For the Override method it is going to check if the player already owned the property,
+              // or if other player do, the player who landed on have to pay
+              // or you can buy it.
     public void landOn(Player P1, Player P2, ChanceDeck chanceDeck, LooseChange looseChange) throws BankruptException
     {
         if(P1.getTurn())
@@ -21,8 +23,20 @@ public class Property extends MonopolySquare {
             }
             else if (ownershipPlayers(squareNum, P1, P2))
             {
-                System.out.println("Congratulation. You bought " + this.propertyColor + ": "+ this.name +"\n\n");
-                P1.addProperty(this.squareNum);
+
+                int minusValueOfProperty = P1.getBankAccount() - priceOfProperties(this.propertyColor);
+                if (minusValueOfProperty <= 0)
+                {
+                    System.out.println("Sorry. You ran out of money. You lost.");
+                    throw new BankruptException("Opps");
+                }
+                else
+                {
+                    System.out.println("Congratulation. You bought " + this.propertyColor + ": "+ this.name +"\n\n");
+                    P1.addProperty(this.squareNum);
+                    P1.setBankAccount(minusValueOfProperty);
+                    System.out.println(P1.getBankAccount() + P1.getName());
+                }
             }
             else
             {
@@ -38,9 +52,19 @@ public class Property extends MonopolySquare {
             }
             else if (ownershipPlayers(squareNum, P1, P2))
             {
-                System.out.println("Congratulation. You bought " + this.propertyColor + ": "+ this.name +"\n\n");
-                P2.addProperty(this.squareNum);
-
+                int minusValueOfProperty = P2.getBankAccount() - priceOfProperties(this.propertyColor);
+                if (minusValueOfProperty <= 0)
+                {
+                    System.out.println("Sorry. You ran out of money. You lost.");
+                    throw new BankruptException("Opps");
+                }
+                else
+                {
+                    System.out.println("Congratulation. You bought " + this.propertyColor + ": "+ this.name +"\n\n");
+                    P2.addProperty(this.squareNum);
+                    P2.setBankAccount(minusValueOfProperty);
+                    System.out.println(P2.getBankAccount() + P2.getName());
+                }
             }
             else
             {
@@ -52,7 +76,7 @@ public class Property extends MonopolySquare {
 
     @Override
     public String toString() {
-        return "You landed on " + name;
+        return "You landed on "+ this.propertyColor + ": " + this.name;
     }
 
     private boolean ownershipPlayers (int squareNum, Player P1, Player P2)

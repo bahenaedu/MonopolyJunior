@@ -51,7 +51,7 @@ public class Player {
 
 	public void addMoney(int amount)
 	{
-		this.bankAccount += bankAccount + amount;
+		this.bankAccount = this.bankAccount + amount;
 	}
 
 	public void addProperty (int numOfProperty)

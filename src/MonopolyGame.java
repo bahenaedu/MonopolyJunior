@@ -62,14 +62,14 @@ public class MonopolyGame {
 					int dicePlayer1 = rollDices();
 					System.out.println(dicePlayer1 + " is what " + player1.getName() + " rolled");
 					player1.setPositAfterRolledDice(dicePlayer1);
-					if (player1.getPosit() <= 31)
+					if (player1.getPosit() <= 31) //before a lap
 					{
 						System.out.println(board[player1.getPosit()].toString());
 						board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
 						//System.out.println(player1.getPosit() + " Position");
 						//System.out.println("Still under or equal 31\n");
 					}
-					else if (player1.getPosit() == 32)
+					else if (player1.getPosit() == 32) //right at the beginning
 					{
 						player1.setPosit(0);
 						System.out.println(board[player1.getPosit()].toString());
@@ -77,7 +77,7 @@ public class MonopolyGame {
 						//System.out.println(player1.getPosit());
 						//System.out.println("First square\n");
 					}
-					else
+					else //after one lap
 					{
 						int newPosIt = player1.getPosit() - 32;
 						player1.addMoney(2);
@@ -112,7 +112,7 @@ public class MonopolyGame {
 					}
 					else
 					{
-						int newPosIt = player2.getPosit() - 32;
+						int newPosIt = player2.getPosit() - 32; // to restart position after a lap
 						player2.addMoney(2);
 						player2.setPosit(newPosIt);
 						System.out.println(board[player2.getPosit()].toString());
