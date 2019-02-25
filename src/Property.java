@@ -35,13 +35,13 @@ public class Property extends MonopolySquare {
                     System.out.println("Congratulation. You bought " + this.propertyColor + ": "+ this.name +"\n\n");
                     P1.addProperty(this.squareNum);
                     P1.setBankAccount(minusValueOfProperty);
-                    System.out.println(P1.getBankAccount() + P1.getName());
                 }
             }
             else
             {
                 System.out.println("Sorry. " + P2.getName() + " already owens " + this.propertyColor + ": " + this.name +
                         ". You have to paid " + priceOfProperties(this.propertyColor) + "\n\n");
+                P2.addMoney(priceOfProperties(this.propertyColor));
             }
         }
         else if (P2.getTurn())
@@ -63,13 +63,13 @@ public class Property extends MonopolySquare {
                     System.out.println("Congratulation. You bought " + this.propertyColor + ": "+ this.name +"\n\n");
                     P2.addProperty(this.squareNum);
                     P2.setBankAccount(minusValueOfProperty);
-                    System.out.println(P2.getBankAccount() + P2.getName());
                 }
             }
             else
             {
                 System.out.println("Sorry. " + P1.getName() + " already owens " + this.propertyColor + ": " + this.name +
                         ". You have to paid " + priceOfProperties(this.propertyColor) + "\n\n");
+                P1.addMoney(priceOfProperties(this.propertyColor)); // add money to the opposite
             }
         }
     }

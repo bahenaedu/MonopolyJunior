@@ -11,17 +11,35 @@ public class Tax extends MonopolySquare {
     @Override
     public void landOn(Player P1, Player P2, ChanceDeck chanceDeck, LooseChange looseChange) throws BankruptException
     {
-        int afterTax = P1.getBankAccount() - payTax;
+        if (P1.getTurn())
+        {
+            int afterTax = P1.getBankAccount() - payTax;
 
-        if(afterTax <= 0)
-        {
-            System.out.println("Opps, out of money!. You lost");
-            throw new BankruptException("Opps, out of money!");
+            if(afterTax <= 0)
+            {
+                System.out.println("Opps, out of money!. You lost");
+                throw new BankruptException("Opps, out of money!");
+            }
+            else
+            {
+                P1.setBankAccount(afterTax);
+            }
         }
-        else
+        else if (P2.getTurn())
         {
-            P1.setBankAccount(afterTax);
+            int afterTax = P2.getBankAccount() - payTax;
+
+            if(afterTax <= 0)
+            {
+                System.out.println("Opps, out of money!. You lost");
+                throw new BankruptException("Opps, out of money!");
+            }
+            else
+            {
+                P2.setBankAccount(afterTax);
+            }
         }
+
     }
 
     @Override
