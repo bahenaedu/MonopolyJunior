@@ -54,7 +54,7 @@ public class MonopolyGame {
 		while(true) {
 			try{
 				counter++; // to check each player turn
-				this.playerTurn(counter, player1, player2); // method to check whose turn is it
+				playerTurn(counter, player1, player2); // method to check whose turn is it
 
 				if (player1.getTurn())
 				{
