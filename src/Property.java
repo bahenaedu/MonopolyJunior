@@ -41,7 +41,7 @@ public class Property extends MonopolySquare {
             {
                 System.out.println("Sorry. " + P2.getName() + " already owens " + this.propertyColor + ": " + this.name +
                         ". You have to paid " + priceOfProperties(this.propertyColor) + "\n\n");
-                P2.addMoney(priceOfProperties(this.propertyColor));
+                P2.addMoney(priceOfProperties(this.propertyColor)); //address the problem of two of the same property. Arraylist of colors to compare
             }
         }
         else if (P2.getTurn())
