@@ -33,7 +33,7 @@ public class Property extends MonopolySquare {
                 else
                 {
                     System.out.println("Congratulation. You bought " + this.propertyColor + ": "+ this.name +"\n\n");
-                    P1.addProperty(this.squareNum);
+                    P1.addProperty(this.squareNum, this.propertyColor);
                     P1.setBankAccount(minusValueOfProperty);
                 }
             }
@@ -61,7 +61,7 @@ public class Property extends MonopolySquare {
                 else
                 {
                     System.out.println("Congratulation. You bought " + this.propertyColor + ": "+ this.name +"\n\n");
-                    P2.addProperty(this.squareNum);
+                    P2.addProperty(this.squareNum, this.propertyColor);
                     P2.setBankAccount(minusValueOfProperty);
                 }
             }

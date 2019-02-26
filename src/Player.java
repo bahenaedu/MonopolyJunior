@@ -8,7 +8,6 @@ public class Player {
 	private int posit;
 	protected ArrayList<Integer> ownedProperties;
 	protected ArrayList<String> colorOfProperty;
-	protected ArrayList<String> nameOfProperty;
 
 	public Player(String n){
 		name = n;
@@ -16,6 +15,7 @@ public class Player {
 		posit = 0;
 		isTurn = false;
 		ownedProperties = new ArrayList<>();
+		colorOfProperty = new ArrayList<>();
 	}
 
 
@@ -54,9 +54,10 @@ public class Player {
 		this.bankAccount = this.bankAccount + amount;
 	}
 
-	public void addProperty (int numOfProperty)
+	public void addProperty (int numOfProperty, String color)
 	{
 		ownedProperties.add(numOfProperty);
+		colorOfProperty.add(color);
 	}
 
 	public boolean checkForProperty (int newProperty)
