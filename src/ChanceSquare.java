@@ -88,8 +88,8 @@ public class ChanceSquare extends MonopolySquare {
                 }
                 else if (counterW == 0)
                 {
-                    System.out.println("Nice. Now you own Purple: Fruit Stand");
-                    P1.addProperty(2, "White");
+                    System.out.println("Nice. Now you own White: Fruit Stand");
+                    P1.addProperty(6, "White");
                 }
             }
             else if (randomCard == 18)
@@ -163,7 +163,6 @@ public class ChanceSquare extends MonopolySquare {
                     System.out.println("Nice. Now you own Orange: Horror House");
                     P1.addProperty(14, "Orange");
                 }
-                System.out.println("Nice. Now you own Orange: Horror House");
             }
             else if (randomCard == 20)
             {
@@ -226,15 +225,15 @@ public class ChanceSquare extends MonopolySquare {
                         }
                         else if (P2.ownedProperties.get(x).equals(23))
                         {
-                            System.out.println("Nice. Now you own Red: Mini Golf");
-                            P1.addProperty(22, "Red");
+                            System.out.println("Nice. Now you own Yellow: Roller Coaster");
+                            P1.addProperty(22, "Yellow");
                         }
                     }
                 }
                 else if (counterY == 0)
                 {
-                    System.out.println("Nice. Now you own Red: Mini Golf");
-                    P1.addProperty(22, "Red");
+                    System.out.println("Nice. Now you own Yellow: Roller Coaster");
+                    P1.addProperty(22, "Yellow");
                 }
             }
             else if (randomCard == 22)
@@ -384,8 +383,8 @@ public class ChanceSquare extends MonopolySquare {
                 }
                 else if (counterW == 0)
                 {
-                    System.out.println("Nice. Now you own Purple: Fruit Stand");
-                    P2.addProperty(2, "White");
+                    System.out.println("Nice. Now you own White: Fruit Stand");
+                    P2.addProperty(6, "White");
                 }
             }
             else if (randomCard == 18)
@@ -459,7 +458,6 @@ public class ChanceSquare extends MonopolySquare {
                     System.out.println("Nice. Now you own Orange: Horror House");
                     P2.addProperty(14, "Orange");
                 }
-                System.out.println("Nice. Now you own Orange: Horror House");
             }
             else if (randomCard == 20)
             {
@@ -549,7 +547,7 @@ public class ChanceSquare extends MonopolySquare {
                 }
                 else if (counterG == 1)
                 {
-                    for(int x = 0; x < P2.ownedProperties.size(); x++)
+                    for(int x = 0; x < P1.ownedProperties.size(); x++)
                     {
                         if(P1.ownedProperties.get(x).equals(27))
                         {
