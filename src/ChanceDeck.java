@@ -1,14 +1,22 @@
 public class ChanceDeck {
 
-	/* Be careful, this may be more complex than you originally thought
-	- There are different *kinds* of chance cards; each has its own action
-	- What do you do if you have used all the cards?
-	- How does the deck get populated?
-	 */
+	private String name;
+	private int numOfCard;
 
-	public ChanceDeck(){
-		// Needs code
+	public ChanceDeck(int numOfCard, String name)
+	{
+		this.name = name;
+		this.numOfCard = numOfCard;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getNumOfCard() {
+		return numOfCard;
+	}
+
 
 	//Needs extra Methods.
 }

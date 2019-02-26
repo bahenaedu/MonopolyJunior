@@ -37,7 +37,33 @@ public class MonopolyGame {
 			new Property("Cotton Candy Stand", "Blue", 31)
 	};
 	private Random random = new Random();
-	private ChanceDeck chanceCardDeck = new ChanceDeck();
+	private ChanceDeck[] chanceCardDeck ={
+			new ChanceDeck(0, "Go to Purple: Balloon Stand"),
+			new ChanceDeck(1, "Go to Purple: Puppet Show"),
+			new ChanceDeck(2, "Go to White: Fruit Stand"),
+			new ChanceDeck(3, "Go to White: Candy Floss"),
+			new ChanceDeck(4, "Go to Pink: Ferris Wheel"),
+			new ChanceDeck(5, "Go to Pink: Octopus Ride"),
+			new ChanceDeck(6, "Go to Orange: Horror House"),
+			new ChanceDeck(7, "Go to Orange: Popcorn Stand"),
+			new ChanceDeck(8, "Go to Red: Convenience Store"),
+			new ChanceDeck(9, "Go to Red: Mini Golf"),
+			new ChanceDeck(10, "Go to Yellow: Loop the Loop"),
+			new ChanceDeck(11, "Go to Yellow: Roller Coaster"),
+			new ChanceDeck(12, "Go to Green: Magic Show"),
+			new ChanceDeck(13, "Go to Green: Octopus Ride"),
+			new ChanceDeck(14, "Go to Blue: Movie House"),
+			new ChanceDeck(15, "Go to Blue: Cotton Candy Stand"),
+			new ChanceDeck(16, "Free ticket Booth to Purple"),
+			new ChanceDeck(17, "Free ticket Booth to White"),
+			new ChanceDeck(18, "Free ticket Booth to Pink"),
+			new ChanceDeck(19, "Free ticket Booth to Orange"),
+			new ChanceDeck(20, "Free ticket Booth to Red"),
+			new ChanceDeck(21, "Free ticket Booth to Yellow"),
+			new ChanceDeck(22, "Free ticket Booth to Green"),
+			new ChanceDeck(23, "Free ticket Booth to Blue")
+	};
+
 	protected Player player1, player2;
 	private LooseChange looseChange;
 	private int counter = 0;

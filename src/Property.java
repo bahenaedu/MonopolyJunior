@@ -13,7 +13,7 @@ public class Property extends MonopolySquare {
     @Override //For the Override method it is going to check if the player already owned the property,
               // or if other player do, the player who landed on have to pay
               // or you can buy it.
-    public void landOn(Player P1, Player P2, ChanceDeck chanceDeck, LooseChange looseChange) throws BankruptException
+    public void landOn(Player P1, Player P2, ChanceDeck[] chanceDeck, LooseChange looseChange) throws BankruptException
     {
         if(P1.getTurn())
         {
