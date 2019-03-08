@@ -70,8 +70,8 @@ public class MonopolyGame {
 
 
 	public MonopolyGame() {
-		player1 = new Player("Lalo");
-		player2 = new Player("Loli");
+		player1 = new Player("Player 1");
+		player2 = new Player("Player 2");
 		looseChange = new LooseChange();
 
 	}
@@ -91,8 +91,9 @@ public class MonopolyGame {
 					if (player1.getPosit() <= 31) //before a lap
 					{
 						System.out.println(board[player1.getPosit()].toString());
-						board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
 						System.out.println(player1.getName() +"'s money " + player1.getBankAccount());
+						board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
+						System.out.print("\n\n");
 						//System.out.println(player1.getPosit() + " Position");
 						//System.out.println("Still under or equal 31\n");
 					}
@@ -100,8 +101,9 @@ public class MonopolyGame {
 					{
 						player1.setPosit(0);
 						System.out.println(board[player1.getPosit()].toString());
-						board[player1.getPosit()].landOn(player1, player2, chanceCardDeck, looseChange);
 						System.out.println(player1.getName() +"'s money " + player1.getBankAccount());
+						board[player1.getPosit()].landOn(player1, player2, chanceCardDeck, looseChange);
+						System.out.print("\n\n");
 						//System.out.println(player1.getPosit());
 						//System.out.println("First square\n");
 					}
@@ -111,8 +113,9 @@ public class MonopolyGame {
 						player1.addMoney(2);
 						player1.setPosit(newPosIt);
 						System.out.println(board[player1.getPosit()].toString());
-						board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
 						System.out.println(player1.getName() +"'s money " + player1.getBankAccount());
+						board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
+						System.out.print("\n\n");
 						//System.out.println(player1.getPosit() + " Position");
 						//System.out.println("Over 31\n");
 					}
@@ -127,8 +130,9 @@ public class MonopolyGame {
 					if (player2.getPosit() <= 31)
 					{
 						System.out.println(board[player2.getPosit()].toString());
+						System.out.println(player2.getName() +"'s money " + player2.getBankAccount());
 						board[player2.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
-						System.out.println(player2.getName() +"'s money " + player1.getBankAccount());
+						System.out.print("\n\n");
 						//System.out.println(player2.getPosit() + " Position");
 						//System.out.println("Still under 31\n");
 					}
@@ -136,8 +140,9 @@ public class MonopolyGame {
 					{
 						player2.setPosit(0);
 						System.out.println(board[player2.getPosit()].toString());
+						System.out.println(player2.getName() +"'s money " + player2.getBankAccount());
 						board[player2.getPosit()].landOn(player1, player2, chanceCardDeck, looseChange);
-						System.out.println(player2.getName() +"'s money " + player1.getBankAccount());
+						System.out.print("\n\n");
 						//System.out.println(player2.getPosit());
 						//System.out.println("First square\n");
 					}
@@ -147,8 +152,9 @@ public class MonopolyGame {
 						player2.addMoney(2);
 						player2.setPosit(newPosIt);
 						System.out.println(board[player2.getPosit()].toString());
+						System.out.println(player2.getName() +"'s money " + player2.getBankAccount());
 						board[player2.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
-						System.out.println(player2.getName() +"'s money " + player1.getBankAccount());
+						System.out.print("\n\n");
 						//System.out.println(player2.getPosit() + " Position");
 						//System.out.println("Over 31\n");
 					}

@@ -615,82 +615,82 @@ public class ChanceSquare extends MonopolySquare {
     {
         if (card == 0)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 1)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 2)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 3)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 4)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 5)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 6)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 7)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 8)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 9)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 10)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 11)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 12)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 13)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 14)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
         else if (card == 15)
         {
-            System.out.println(chanceDeck[card].getName() + "\n");
+            System.out.println(chanceDeck[card].getName());
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
     }

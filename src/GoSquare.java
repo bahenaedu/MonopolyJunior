@@ -13,7 +13,7 @@ public class GoSquare extends MonopolySquare {
     @Override
     public void landOn(Player P1, Player P2, ChanceDeck[] chanceDeck, LooseChange looseChange) throws BankruptException
     {
-
+        //when you land here it does not do anything. The 2 dollars extra are handler by the board.
     }
 
     @Override
