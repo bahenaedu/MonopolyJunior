@@ -123,7 +123,7 @@ public class Property extends MonopolySquare {
         return "You landed on "+ this.propertyColor + ": " + this.name;
     }
 
-    private boolean ownershipPlayers (int squareNum, Player P1, Player P2)
+    private boolean ownershipPlayers (int squareNum, Player P1, Player P2) //if the other player owns the property it will return false
     {
       if (P1.getTurn())
       {
@@ -148,7 +148,7 @@ public class Property extends MonopolySquare {
       return true;
     }
 
-    private int priceOfProperties (String color)
+    private int priceOfProperties (String color) //values of properties
     {
         int price;
         if (color == "Purple")
@@ -197,7 +197,7 @@ public class Property extends MonopolySquare {
         }
     }
 
-    private boolean playerOwensTwo (Player p, String color)
+    private boolean playerOwensTwo (Player p, String color) //it checks if the player owns both properties based on how many color codes the player has.
     {
         int counter = 0;
         for (int x = 0; x < p.colorOfProperty.size(); x++)

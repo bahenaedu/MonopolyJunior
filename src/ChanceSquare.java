@@ -4,12 +4,15 @@ public class ChanceSquare extends MonopolySquare {
     private int squareNum;
     private Random random;
 
+    //Constructor will ask for the name of the chance square, which is the same, and the num where the square is positioned.
     public ChanceSquare(String name, int num){
         super(name);
         this.squareNum = num;
         random = new Random();
     }
 
+    //The Override landOn method for chance square for each card there is a behavior, which means means depending where
+    //which card is withdrew form the deck.
     @Override
     public void landOn(Player P1, Player P2, ChanceDeck[] chanceDeck, LooseChange looseChange) throws BankruptException
     {

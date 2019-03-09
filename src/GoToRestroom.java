@@ -8,6 +8,8 @@ public class GoToRestroom extends MonopolySquare{
         this.squareNum = num;
     }
 
+    //The GoToRestroom give 3 dollars to the loosechange part from the player landed on and move to the restroom,
+    //without getting 2 dollars by passing GoSquare
     @Override
     public void landOn(Player P1, Player P2, ChanceDeck[] chanceDeck, LooseChange looseChange) throws BankruptException
     {
@@ -21,7 +23,7 @@ public class GoToRestroom extends MonopolySquare{
             }
             else
             {
-                System.out.println("I am sorry. You need to move to restroom and pay $3 to loosechnage.");
+                System.out.println("I am sorry. You need to move to restroom and pay $3 to loosechange.");
                 P1.setBankAccount(P1.getBankAccount() - 3);
                 looseChange.setPlusBalance(3);
                 P1.setPosit(10);
@@ -37,7 +39,7 @@ public class GoToRestroom extends MonopolySquare{
             }
             else
             {
-                System.out.println("I am sorry. You need to move to restroom and pay $3 to loosechnage.");
+                System.out.println("I am sorry. You need to move to restroom and pay $3 to loosechange.");
                 P2.setBankAccount(P2.getBankAccount() - 3);
                 looseChange.setPlusBalance(3);
                 P2.setPosit(10);

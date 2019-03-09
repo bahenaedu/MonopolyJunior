@@ -4,6 +4,7 @@ public class GoSquare extends MonopolySquare {
 
     private int squareNum;
 
+    //sames as other children of MonopolySquare, it requests for name and num where is located.
     public GoSquare (String name, int num)
     {
         super(name);

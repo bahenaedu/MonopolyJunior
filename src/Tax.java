@@ -8,6 +8,7 @@ public class Tax extends MonopolySquare {
         this.squareNum = num;
     }
 
+    //The method will reduce 2 dollars from the player's account and put it to the loosechange and also check if the player is bankrupt
     @Override
     public void landOn(Player P1, Player P2, ChanceDeck[] chanceDeck, LooseChange looseChange) throws BankruptException
     {

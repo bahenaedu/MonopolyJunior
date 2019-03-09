@@ -2,13 +2,15 @@ public class LooseChange {
 
 	private int balance;
 
+	//The class just saves the money collected by player for landing on taxsquares, and GoToRestroom. Also, if you land
+	//on the square LooseChangeSquare will give the player the money collected.
 	public LooseChange(){
 		balance = 0;
 	}
 
 	public void setPlusBalance (int plusAmount)
 	{
-		balance =+ plusAmount;
+		balance = balance + plusAmount;
 
 	}
 

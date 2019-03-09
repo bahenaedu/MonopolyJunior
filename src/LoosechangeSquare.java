@@ -8,6 +8,7 @@ public class LoosechangeSquare extends MonopolySquare {
         this.squareNum = num;
     }
 
+    //The Square will give you what is collected on square loosechange and will set the balance to 0.
     @Override
     public void landOn(Player P1, Player P2, ChanceDeck[] chanceDeck, LooseChange looseChange) throws BankruptException
     {

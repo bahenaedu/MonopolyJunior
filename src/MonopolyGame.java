@@ -2,6 +2,7 @@ import java.awt.desktop.SystemEventListener;
 import java.util.Random;
 
 public class MonopolyGame {
+	//it creates the boar, with the different kind of squares and their positions.
 	private MonopolySquare[] board = {
 			new GoSquare("Go", 0),
 			new ChanceSquare("Chance", 1),
@@ -36,8 +37,7 @@ public class MonopolyGame {
 			new Property("Movie House", "Blue", 30),
 			new Property("Cotton Candy Stand", "Blue", 31)
 	};
-	private Random random = new Random();
-	private ChanceDeck[] chanceCardDeck ={
+	private ChanceDeck[] chanceCardDeck = { //Different kind of chanceCards and their position where the player has to move if needs to.
 			new ChanceDeck(0, "Go to Purple: Balloon Stand", 2),
 			new ChanceDeck(1, "Go to Purple: Puppet Show", 3),
 			new ChanceDeck(2, "Go to White: Fruit Stand", 6),
@@ -63,9 +63,9 @@ public class MonopolyGame {
 			new ChanceDeck(22, "Free ticket Booth to Green", 0),
 			new ChanceDeck(23, "Free ticket Booth to Blue", 0)
 	};
-
 	protected Player player1, player2;
 	private LooseChange looseChange;
+	private Random random = new Random();
 	private int counter = 0;
 
 
@@ -73,7 +73,6 @@ public class MonopolyGame {
 		player1 = new Player("Player 1");
 		player2 = new Player("Player 2");
 		looseChange = new LooseChange();
-
 	}
 
 	public void play() {
@@ -94,8 +93,6 @@ public class MonopolyGame {
 						System.out.println(player1.getName() +"'s money " + player1.getBankAccount());
 						board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
 						System.out.print("\n\n");
-						//System.out.println(player1.getPosit() + " Position");
-						//System.out.println("Still under or equal 31\n");
 					}
 					else if (player1.getPosit() == 32) //right at the beginning
 					{
@@ -104,8 +101,6 @@ public class MonopolyGame {
 						System.out.println(player1.getName() +"'s money " + player1.getBankAccount());
 						board[player1.getPosit()].landOn(player1, player2, chanceCardDeck, looseChange);
 						System.out.print("\n\n");
-						//System.out.println(player1.getPosit());
-						//System.out.println("First square\n");
 					}
 					else //after one lap
 					{
@@ -116,8 +111,6 @@ public class MonopolyGame {
 						System.out.println(player1.getName() +"'s money " + player1.getBankAccount());
 						board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
 						System.out.print("\n\n");
-						//System.out.println(player1.getPosit() + " Position");
-						//System.out.println("Over 31\n");
 					}
 
 				}
@@ -133,8 +126,6 @@ public class MonopolyGame {
 						System.out.println(player2.getName() +"'s money " + player2.getBankAccount());
 						board[player2.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
 						System.out.print("\n\n");
-						//System.out.println(player2.getPosit() + " Position");
-						//System.out.println("Still under 31\n");
 					}
 					else if (player2.getPosit() == 32) //in case it lands in the first square
 					{
@@ -143,8 +134,6 @@ public class MonopolyGame {
 						System.out.println(player2.getName() +"'s money " + player2.getBankAccount());
 						board[player2.getPosit()].landOn(player1, player2, chanceCardDeck, looseChange);
 						System.out.print("\n\n");
-						//System.out.println(player2.getPosit());
-						//System.out.println("First square\n");
 					}
 					else
 					{
@@ -155,8 +144,6 @@ public class MonopolyGame {
 						System.out.println(player2.getName() +"'s money " + player2.getBankAccount());
 						board[player2.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
 						System.out.print("\n\n");
-						//System.out.println(player2.getPosit() + " Position");
-						//System.out.println("Over 31\n");
 					}
 				}
 

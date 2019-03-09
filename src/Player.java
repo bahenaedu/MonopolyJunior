@@ -6,8 +6,8 @@ public class Player {
 	private String name;
 	private boolean isTurn;
 	private int posit;
-	protected ArrayList<Integer> ownedProperties;
-	protected ArrayList<String> colorOfProperty;
+	protected ArrayList<Integer> ownedProperties; //to see the number on board what the player own
+	protected ArrayList<String> colorOfProperty; //to see if the player owens both colors
 
 	public Player(String n){
 		name = n;

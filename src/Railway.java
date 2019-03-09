@@ -12,6 +12,7 @@ public class Railway extends MonopolySquare {
     }
 
     @Override
+    //The method will make to roll again the player and chance the position.
     public void landOn(Player P1, Player P2, ChanceDeck[] chanceDeck, LooseChange looseChange) throws BankruptException
     {
         if(P1.getTurn())
