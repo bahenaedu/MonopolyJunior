@@ -25,293 +25,39 @@ public class ChanceSquare extends MonopolySquare {
             }
             else if (randomCard == 16)
             {
-                int counterP = 0;
-                for (int x = 0; x < P2.ownedProperties.size(); x++)
-                {
-                    if (P2.colorOfProperty.get(x).equals("Purple"))
-                    {
-                        counterP++;
-                    }
-                }
-                if (counterP == 2)
-                {
-                    System.out.println("Opps "+ P2.getName() + " owns all Purples");
-                }
-                else if (counterP == 1)
-                {
-                    for(int x = 0; x <P2.ownedProperties.size(); x++)
-                    {
-                        if(P2.ownedProperties.get(x).equals(2))
-                        {
-                            System.out.println("Nice. Now you own Purple: Puppet Show");
-                            P1.addProperty(3, "Purple");
-                        }
-                        else if (P2.ownedProperties.get(x).equals(3))
-                        {
-                            System.out.println("Nice. Now you own Purple: Balloon Stand");
-                            P1.addProperty(2, "Purple");
-                        }
-                    }
-                }
-                else if (counterP == 0)
-                {
-                    System.out.println("Nice. Now you own Purple: Balloon Stand");
-                    P1.addProperty(2, "Purple");
-                }
+                restOfCards(P1,P2, "Purple", "Balloon Stand", "Puppet Show", 2,3);
             }
             else if (randomCard == 17)
             {
-                int counterW = 0;
-                for (int x = 0; x < P2.ownedProperties.size(); x++)
-                {
-                    if (P2.colorOfProperty.get(x).equals("White"))
-                    {
-                        counterW++;
-                    }
-                }
-                if (counterW == 2)
-                {
-                    System.out.println("Opps "+ P2.getName() + " owns all Whites");
-                }
-                else if (counterW == 1)
-                {
-                    for(int x = 0; x < P2.ownedProperties.size(); x++)
-                    {
-                        if(P2.ownedProperties.get(x).equals(6))
-                        {
-                            System.out.println("Nice. Now you own White: Candy Floss");
-                            P1.addProperty(7, "White");
-                        }
-                        else if (P2.ownedProperties.get(x).equals(7))
-                        {
-                            System.out.println("Nice. Now you own White: Fruit Stand");
-                            P1.addProperty(6, "White");
-                        }
-                    }
-                }
-                else if (counterW == 0)
-                {
-                    System.out.println("Nice. Now you own White: Fruit Stand");
-                    P1.addProperty(6, "White");
-                }
+                restOfCards(P1,P2, "White", "Fruit Stand", "Candy Floss", 6,7);
             }
             else if (randomCard == 18)
             {
-                int counterP = 0;
-                for (int x = 0; x < P2.ownedProperties.size(); x++)
-                {
-                    if (P2.colorOfProperty.get(x).equals("Pink"))
-                    {
-                        counterP++;
-                    }
-                }
-                if (counterP == 2)
-                {
-                    System.out.println("Opps "+ P2.getName() + " owns all Pinks");
-                }
-                else if (counterP == 1)
-                {
-                    for(int x = 0; x < P2.ownedProperties.size(); x++)
-                    {
-                        if(P2.ownedProperties.get(x).equals(11))
-                        {
-                            System.out.println("Nice. Now you own Pink: Octopus Ride");
-                            P1.addProperty(12, "Pink");
-                        }
-                        else if (P2.ownedProperties.get(x).equals(12))
-                        {
-                            System.out.println("Nice. Now you own Pink: Ferris Wheel");
-                            P1.addProperty(11, "Pink");
-                        }
-                    }
-                }
-                else if (counterP == 0)
-                {
-                    System.out.println("Nice. Now you own Pink: Ferris Wheel");
-                    P1.addProperty(11, "Pink");
-                }
+                restOfCards(P1,P2, "Pink", "Ferris Wheel", "Octopus Ride", 11,12);
             }
             else if (randomCard == 19)
             {
-                int counterO = 0;
-                for (int x = 0; x < P2.ownedProperties.size(); x++)
-                {
-                    if (P2.colorOfProperty.get(x).equals("Orange"))
-                    {
-                        counterO++;
-                    }
-                }
-                if (counterO == 2)
-                {
-                    System.out.println("Opps "+ P2.getName() + " owns all Oranges");
-                }
-                else if (counterO == 1)
-                {
-                    for(int x = 0; x < P2.ownedProperties.size(); x++)
-                    {
-                        if(P2.ownedProperties.get(x).equals(14))
-                        {
-                            System.out.println("Nice. Now you own Orange: Popcorn Stand");
-                            P1.addProperty(15, "Orange");
-                        }
-                        else if (P2.ownedProperties.get(x).equals(15))
-                        {
-                            System.out.println("Nice. Now you own Orange: Horror House");
-                            P1.addProperty(14, "Orange");
-                        }
-                    }
-                }
-                else if (counterO == 0)
-                {
-                    System.out.println("Nice. Now you own Orange: Horror House");
-                    P1.addProperty(14, "Orange");
-                }
+                restOfCards(P1,P2, "Orange", "Horror House", "Popcorn Stand", 14,15);
             }
             else if (randomCard == 20)
             {
-                int counterR = 0;
-                for (int x = 0; x < P2.ownedProperties.size(); x++)
-                {
-                    if (P2.colorOfProperty.get(x).equals("Red"))
-                    {
-                        counterR++;
-                    }
-                }
-                if (counterR == 2)
-                {
-                    System.out.println("Opps "+ P2.getName() + " owns all Reds");
-                }
-                else if (counterR == 1)
-                {
-                    for(int x = 0; x < P2.ownedProperties.size(); x++)
-                    {
-                        if(P2.ownedProperties.get(x).equals(18))
-                        {
-                            System.out.println("Nice. Now you own Red: Convenience Store");
-                            P1.addProperty(19, "Red");
-                        }
-                        else if (P2.ownedProperties.get(x).equals(19))
-                        {
-                            System.out.println("Nice. Now you own Red: Mini Golf");
-                            P1.addProperty(18, "Red");
-                        }
-                    }
-                }
-                else if (counterR == 0)
-                {
-                    System.out.println("Nice. Now you own Red: Mini Golf");
-                    P1.addProperty(18, "Red");
-                }
+                restOfCards(P1,P2, "Red", "Mini Golf", "Convenience Store", 18,19);
             }
             else if (randomCard == 21)
             {
-                int counterY = 0;
-                for (int x = 0; x < P2.ownedProperties.size(); x++)
-                {
-                    if (P2.colorOfProperty.get(x).equals("Yellow"))
-                    {
-                        counterY++;
-                    }
-                }
-                if (counterY == 2)
-                {
-                    System.out.println("Opps "+ P2.getName() + " owns all Yellows");
-                }
-                else if (counterY == 1)
-                {
-                    for(int x = 0; x < P2.ownedProperties.size(); x++)
-                    {
-                        if(P2.ownedProperties.get(x).equals(22))
-                        {
-                            System.out.println("Nice. Now you own Yellow: Loop the Loop");
-                            P1.addProperty(23, "Yellow");
-                        }
-                        else if (P2.ownedProperties.get(x).equals(23))
-                        {
-                            System.out.println("Nice. Now you own Yellow: Roller Coaster");
-                            P1.addProperty(22, "Yellow");
-                        }
-                    }
-                }
-                else if (counterY == 0)
-                {
-                    System.out.println("Nice. Now you own Yellow: Roller Coaster");
-                    P1.addProperty(22, "Yellow");
-                }
+                restOfCards(P1,P2, "Yellow", "Roller Coaster", "Loop the Loop", 22,23);
             }
             else if (randomCard == 22)
             {
-                int counterG = 0;
-                for (int x = 0; x < P2.ownedProperties.size(); x++)
-                {
-                    if (P2.colorOfProperty.get(x).equals("Green"))
-                    {
-                        counterG++;
-                    }
-                }
-                if (counterG == 2)
-                {
-                    System.out.println("Opps "+ P2.getName() + " owns all Greens");
-                }
-                else if (counterG == 1)
-                {
-                    for(int x = 0; x < P2.ownedProperties.size(); x++)
-                    {
-                        if(P2.ownedProperties.get(x).equals(27))
-                        {
-                            System.out.println("Nice. Now you own Green: Magic Show");
-                            P1.addProperty(28, "Green");
-                        }
-                        else if (P2.ownedProperties.get(x).equals(28))
-                        {
-                            System.out.println("Nice. Now you own Green: Octopus Ride");
-                            P1.addProperty(27, "Green");
-                        }
-                    }
-                }
-                else if (counterG == 0)
-                {
-                    System.out.println("Nice. Now you own Green: Octopus Ride");
-                    P1.addProperty(27, "Green");
-                }
+                restOfCards(P1,P2, "Green", "Octopus Ride", "Magic Show", 27,28);
             }
             else if (randomCard == 23)
             {
-                int counterB = 0;
-                for (int x = 0; x < P2.ownedProperties.size(); x++)
-                {
-                    if (P2.colorOfProperty.get(x).equals("Blue"))
-                    {
-                        counterB++;
-                    }
-                }
-                if (counterB == 2)
-                {
-                    System.out.println("Opps "+ P2.getName() + " owns all Blues");
-                }
-                else if (counterB == 1)
-                {
-                    for(int x = 0; x < P2.ownedProperties.size(); x++)
-                    {
-                        if(P2.ownedProperties.get(x).equals(30))
-                        {
-                            System.out.println("Nice. Now you own Blue: Movie House");
-                            P1.addProperty(31, "Blue");
-                        }
-                        else if (P2.ownedProperties.get(x).equals(31))
-                        {
-                            System.out.println("Nice. Now you own Cotton Candy Stand");
-                            P1.addProperty(30, "Blue");
-                        }
-                    }
-                }
-                else if (counterB == 0)
-                {
-                    System.out.println("Nice. Now you own Cotton Candy Stand");
-                    P1.addProperty(30, "Blue");
-                }
+                restOfCards(P1,P2, "Blue", "Candy Stand", "Movie House", 30,31);
             }
         }
+
+
         else if (P2.getTurn())
         {
             if (randomCard <= 15)
@@ -320,292 +66,37 @@ public class ChanceSquare extends MonopolySquare {
             }
             else if (randomCard == 16)
             {
-                int counterP = 0;
-                for (int x = 0; x < P1.ownedProperties.size(); x++)
-                {
-                    if (P1.colorOfProperty.get(x).equals("Purple"))
-                    {
-                        counterP++;
-                    }
-                }
-                if (counterP == 2)
-                {
-                    System.out.println("Opps "+ P1.getName() + " owns all Purples");
-                }
-                else if (counterP == 1)
-                {
-                    for(int x = 0; x <P1.ownedProperties.size(); x++)
-                    {
-                        if(P1.ownedProperties.get(x).equals(2))
-                        {
-                            System.out.println("Nice. Now you own Purple: Puppet Show");
-                            P2.addProperty(3, "Purple");
-                        }
-                        else if (P1.ownedProperties.get(x).equals(3))
-                        {
-                            System.out.println("Nice. Now you own Purple: Balloon Stand");
-                            P2.addProperty(2, "Purple");
-                        }
-                    }
-                }
-                else if (counterP == 0)
-                {
-                    System.out.println("Nice. Now you own Purple: Balloon Stand");
-                    P2.addProperty(2, "Purple");
-                }
+                restOfCards(P2,P1, "Purple", "Balloon Stand", "Puppet Show", 2,3);
             }
             else if (randomCard == 17)
             {
-                int counterW = 0;
-                for (int x = 0; x < P1.ownedProperties.size(); x++)
-                {
-                    if (P1.colorOfProperty.get(x).equals("White"))
-                    {
-                        counterW++;
-                    }
-                }
-                if (counterW == 2)
-                {
-                    System.out.println("Opps "+ P1.getName() + " owns all Whites");
-                }
-                else if (counterW == 1)
-                {
-                    for(int x = 0; x < P1.ownedProperties.size(); x++)
-                    {
-                        if(P1.ownedProperties.get(x).equals(6))
-                        {
-                            System.out.println("Nice. Now you own White: Candy Floss");
-                            P2.addProperty(7, "White");
-                        }
-                        else if (P1.ownedProperties.get(x).equals(7))
-                        {
-                            System.out.println("Nice. Now you own White: Fruit Stand");
-                            P2.addProperty(6, "White");
-                        }
-                    }
-                }
-                else if (counterW == 0)
-                {
-                    System.out.println("Nice. Now you own White: Fruit Stand");
-                    P2.addProperty(6, "White");
-                }
+                restOfCards(P2,P1, "White", "Fruit Stand", "Candy Floss", 6,7);
             }
             else if (randomCard == 18)
             {
-                int counterP = 0;
-                for (int x = 0; x < P1.ownedProperties.size(); x++)
-                {
-                    if (P1.colorOfProperty.get(x).equals("Pink"))
-                    {
-                        counterP++;
-                    }
-                }
-                if (counterP == 2)
-                {
-                    System.out.println("Opps "+ P1.getName() + " owns all Pinks");
-                }
-                else if (counterP == 1)
-                {
-                    for(int x = 0; x < P1.ownedProperties.size(); x++)
-                    {
-                        if(P1.ownedProperties.get(x).equals(11))
-                        {
-                            System.out.println("Nice. Now you own Pink: Octopus Ride");
-                            P2.addProperty(12, "Pink");
-                        }
-                        else if (P1.ownedProperties.get(x).equals(12))
-                        {
-                            System.out.println("Nice. Now you own Pink: Ferris Wheel");
-                            P2.addProperty(11, "Pink");
-                        }
-                    }
-                }
-                else if (counterP == 0)
-                {
-                    System.out.println("Nice. Now you own Pink: Ferris Wheel");
-                    P2.addProperty(11, "Pink");
-                }
+                restOfCards(P2,P1, "Pink", "Ferris Wheel", "Octopus Ride", 11,12);
             }
             else if (randomCard == 19)
             {
-                int counterO = 0;
-                for (int x = 0; x < P1.ownedProperties.size(); x++)
-                {
-                    if (P1.colorOfProperty.get(x).equals("Orange"))
-                    {
-                        counterO++;
-                    }
-                }
-                if (counterO == 2)
-                {
-                    System.out.println("Opps "+ P1.getName() + " owns all Oranges");
-                }
-                else if (counterO == 1)
-                {
-                    for(int x = 0; x < P1.ownedProperties.size(); x++)
-                    {
-                        if(P1.ownedProperties.get(x).equals(14))
-                        {
-                            System.out.println("Nice. Now you own Orange: Popcorn Stand");
-                            P2.addProperty(15, "Orange");
-                        }
-                        else if (P1.ownedProperties.get(x).equals(15))
-                        {
-                            System.out.println("Nice. Now you own Orange: Horror House");
-                            P2.addProperty(14, "Orange");
-                        }
-                    }
-                }
-                else if (counterO == 0)
-                {
-                    System.out.println("Nice. Now you own Orange: Horror House");
-                    P2.addProperty(14, "Orange");
-                }
+                restOfCards(P2,P1, "Orange", "Horror House", "Popcorn Stand", 14,15);
             }
             else if (randomCard == 20)
             {
-                int counterR = 0;
-                for (int x = 0; x < P1.ownedProperties.size(); x++)
-                {
-                    if (P1.colorOfProperty.get(x).equals("Red"))
-                    {
-                        counterR++;
-                    }
-                }
-                if (counterR == 2)
-                {
-                    System.out.println("Opps "+ P1.getName() + " owns all Reds");
-                }
-                else if (counterR == 1)
-                {
-                    for(int x = 0; x < P1.ownedProperties.size(); x++)
-                    {
-                        if(P1.ownedProperties.get(x).equals(18))
-                        {
-                            System.out.println("Nice. Now you own Red: Convenience Store");
-                            P2.addProperty(19, "Red");
-                        }
-                        else if (P1.ownedProperties.get(x).equals(19))
-                        {
-                            System.out.println("Nice. Now you own Red: Mini Golf");
-                            P2.addProperty(18, "Red");
-                        }
-                    }
-                }
-                else if (counterR == 0)
-                {
-                    System.out.println("Nice. Now you own Red: Mini Golf");
-                    P2.addProperty(18, "Red");
-                }
+                restOfCards(P2,P1, "Red", "Mini Golf", "Convenience Store", 18,19);
             }
             else if (randomCard == 21)
             {
-                int counterY = 0;
-                for (int x = 0; x < P1.ownedProperties.size(); x++)
-                {
-                    if (P1.colorOfProperty.get(x).equals("Yellow"))
-                    {
-                        counterY++;
-                    }
-                }
-                if (counterY == 2)
-                {
-                    System.out.println("Opps "+ P1.getName() + " owns all Yellows");
-                }
-                else if (counterY == 1)
-                {
-                    for(int x = 0; x < P1.ownedProperties.size(); x++)
-                    {
-                        if(P1.ownedProperties.get(x).equals(22))
-                        {
-                            System.out.println("Nice. Now you own Yellow: Loop the Loop");
-                            P2.addProperty(23, "Yellow");
-                        }
-                        else if (P1.ownedProperties.get(x).equals(23))
-                        {
-                            System.out.println("Nice. Now you own Red: Mini Golf");
-                            P2.addProperty(22, "Red");
-                        }
-                    }
-                }
-                else if (counterY == 0)
-                {
-                    System.out.println("Nice. Now you own Red: Mini Golf");
-                    P2.addProperty(22, "Red");
-                }
+                restOfCards(P2,P1, "Yellow", "Roller Coaster", "Loop the Loop", 22,23);
             }
             else if (randomCard == 22)
             {
-                int counterG = 0;
-                for (int x = 0; x < P1.ownedProperties.size(); x++)
-                {
-                    if (P1.colorOfProperty.get(x).equals("Green"))
-                    {
-                        counterG++;
-                    }
-                }
-                if (counterG == 2)
-                {
-                    System.out.println("Opps "+ P1.getName() + " owns all Greens");
-                }
-                else if (counterG == 1)
-                {
-                    for(int x = 0; x < P1.ownedProperties.size(); x++)
-                    {
-                        if(P1.ownedProperties.get(x).equals(27))
-                        {
-                            System.out.println("Nice. Now you own Green: Magic Show");
-                            P2.addProperty(28, "Green");
-                        }
-                        else if (P1.ownedProperties.get(x).equals(28))
-                        {
-                            System.out.println("Nice. Now you own Green: Octopus Ride");
-                            P2.addProperty(27, "Green");
-                        }
-                    }
-                }
-                else if (counterG == 0)
-                {
-                    System.out.println("Nice. Now you own Green: Octopus Ride");
-                    P2.addProperty(27, "Green");
-                }
+                restOfCards(P2,P1, "Green", "Octopus Ride", "Magic Show", 27,28);
             }
             else if (randomCard == 23)
             {
-                int counterB = 0;
-                for (int x = 0; x < P1.ownedProperties.size(); x++)
-                {
-                    if (P1.colorOfProperty.get(x).equals("Blue"))
-                    {
-                        counterB++;
-                    }
-                }
-                if (counterB == 2)
-                {
-                    System.out.println("Opps "+ P1.getName() + " owns all Blues");
-                }
-                else if (counterB == 1)
-                {
-                    for(int x = 0; x < P1.ownedProperties.size(); x++)
-                    {
-                        if(P1.ownedProperties.get(x).equals(30))
-                        {
-                            System.out.println("Nice. Now you own Blue: Movie House");
-                            P2.addProperty(31, "Blue");
-                        }
-                        else if (P1.ownedProperties.get(x).equals(31))
-                        {
-                            System.out.println("Nice. Now you own Cotton Candy Stand");
-                            P2.addProperty(30, "Blue");
-                        }
-                    }
-                }
-                else if (counterB == 0)
-                {
-                    System.out.println("Nice. Now you own Cotton Candy Stand");
-                    P2.addProperty(30, "Blue");
-                }
+                restOfCards(P2,P1, "Blue", "Candy Stand", "Movie House", 30,31);
             }
+
         }
     }
 
@@ -697,6 +188,44 @@ public class ChanceSquare extends MonopolySquare {
             player.setPosit(chanceDeck[card].getPlaceToMove());
         }
     }
+
+    private void restOfCards (Player movingPlayer, Player notMovingPlayer, String color, String propertyNameOne, String propertyNameTwo, int firstPostOfColor, int secondPostOfColor)
+    {
+        int counter = 0;
+        for (int x = 0; x < notMovingPlayer.ownedProperties.size(); x++)
+        {
+            if (notMovingPlayer.colorOfProperty.get(x).equals(color))
+            {
+                counter++;
+            }
+        }
+        if (counter == 2)
+        {
+            System.out.println("Opps "+ notMovingPlayer.getName() + " owns all " + color + "s");
+        }
+        else if (counter == 1)
+        {
+            for(int x = 0; x < notMovingPlayer.ownedProperties.size(); x++)
+            {
+                if(notMovingPlayer.ownedProperties.get(x).equals(firstPostOfColor))
+                {
+                    System.out.println("Nice. Now you own " + color + ": " + propertyNameTwo);
+                    movingPlayer.addProperty(secondPostOfColor, color);
+                }
+                else if (notMovingPlayer.ownedProperties.get(x).equals(secondPostOfColor))
+                {
+                    System.out.println("Nice. Now you own " + color + ": " + propertyNameOne);
+                    movingPlayer.addProperty(firstPostOfColor, color);
+                }
+            }
+        }
+        else if (counter == 0)
+        {
+            System.out.println("Nice. Now you own " + color + ": " + propertyNameOne);
+            movingPlayer.addProperty(firstPostOfColor, color);
+        }
+    }
+
 
 
 }
