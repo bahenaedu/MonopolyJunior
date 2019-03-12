@@ -225,7 +225,4 @@ public class ChanceSquare extends MonopolySquare {
             movingPlayer.addProperty(firstPostOfColor, color);
         }
     }
-
-
-
 }

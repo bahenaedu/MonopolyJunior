@@ -2,6 +2,7 @@ public class Tax extends MonopolySquare {
 
     private int payTax = 2;
     private int squareNum;
+    private int afterTax;
 
     public Tax (String name, int num){
         super(name);
@@ -14,7 +15,7 @@ public class Tax extends MonopolySquare {
     {
         if (P1.getTurn())
         {
-            int afterTax = P1.getBankAccount() - payTax;
+            afterTax = P1.getBankAccount() - payTax;
 
             if(afterTax <= 0)
             {
@@ -23,13 +24,12 @@ public class Tax extends MonopolySquare {
             }
             else
             {
-                looseChange.setPlusBalance(payTax);
-                P1.setBankAccount(afterTax);
+                afterTax(P1, looseChange, afterTax);
             }
         }
         else if (P2.getTurn())
         {
-            int afterTax = P2.getBankAccount() - payTax;
+            afterTax = P2.getBankAccount() - payTax;
 
             if(afterTax <= 0)
             {
@@ -38,13 +38,17 @@ public class Tax extends MonopolySquare {
             }
             else
             {
-                looseChange.setPlusBalance(payTax);
-                P2.setBankAccount(afterTax);
+                afterTax(P2, looseChange, afterTax);
             }
         }
 
     }
-
+    private void afterTax (Player p, LooseChange looseChange, int afterTax)
+    {
+        System.out.println("Upps, you have to pay $2 of taxes that goes to loosechange.");
+        looseChange.setPlusBalance(payTax);
+        p.setBankAccount(afterTax);
+    }
     @Override
     public String toString() {
         return "You landed on " + name;

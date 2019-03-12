@@ -83,67 +83,43 @@ public class MonopolyGame {
 
 				if (player1.getTurn())
 				{
-					System.out.println("It is " + player1.getName() + "'s turn");
-					int dicePlayer1 = rollDices();
-					System.out.println(dicePlayer1 + " is what " + player1.getName() + " rolled");
-					player1.setPositAfterRolledDice(dicePlayer1);
+					introOfPlayer(player1);
 					if (player1.getPosit() <= 31) //before a lap
 					{
-						System.out.println(board[player1.getPosit()].toString());
-						System.out.println(player1.getName() +"'s money " + player1.getBankAccount());
-						board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
-						System.out.print("\n\n");
+						infoPlayer(player1,player2,chanceCardDeck, looseChange);
 					}
 					else if (player1.getPosit() == 32) //right at the beginning
 					{
 						player1.setPosit(0);
-						System.out.println(board[player1.getPosit()].toString());
-						System.out.println(player1.getName() +"'s money " + player1.getBankAccount());
-						board[player1.getPosit()].landOn(player1, player2, chanceCardDeck, looseChange);
-						System.out.print("\n\n");
+						infoPlayer(player1,player2,chanceCardDeck, looseChange);
 					}
 					else //after one lap
 					{
 						int newPosIt = player1.getPosit() - 32;
 						player1.addMoney(2);
 						player1.setPosit(newPosIt);
-						System.out.println(board[player1.getPosit()].toString());
-						System.out.println(player1.getName() +"'s money " + player1.getBankAccount());
-						board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
-						System.out.print("\n\n");
+						infoPlayer(player1,player2,chanceCardDeck, looseChange);
 					}
 
 				}
 				else if (player2.getTurn())
 				{
-					System.out.println("It is " + player2.getName() + "'s turn");
-					int dicePlayer2 = rollDices();
-					System.out.println(dicePlayer2 + " what " + player2.getName() + " rolled");
-					player2.setPositAfterRolledDice(dicePlayer2);
+					introOfPlayer(player2);
 					if (player2.getPosit() <= 31)
 					{
-						System.out.println(board[player2.getPosit()].toString());
-						System.out.println(player2.getName() +"'s money " + player2.getBankAccount());
-						board[player2.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
-						System.out.print("\n\n");
+						infoPlayer(player1, player2, chanceCardDeck, looseChange);
 					}
 					else if (player2.getPosit() == 32) //in case it lands in the first square
 					{
 						player2.setPosit(0);
-						System.out.println(board[player2.getPosit()].toString());
-						System.out.println(player2.getName() +"'s money " + player2.getBankAccount());
-						board[player2.getPosit()].landOn(player1, player2, chanceCardDeck, looseChange);
-						System.out.print("\n\n");
+						infoPlayer(player1, player2, chanceCardDeck, looseChange);
 					}
 					else
 					{
 						int newPosIt = player2.getPosit() - 32; // to restart position after a lap
 						player2.addMoney(2);
 						player2.setPosit(newPosIt);
-						System.out.println(board[player2.getPosit()].toString());
-						System.out.println(player2.getName() +"'s money " + player2.getBankAccount());
-						board[player2.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
-						System.out.print("\n\n");
+						infoPlayer(player1, player2, chanceCardDeck, looseChange);
 					}
 				}
 
@@ -154,14 +130,41 @@ public class MonopolyGame {
 		}
 	}
 
-	public int rollDices()
+	private void introOfPlayer (Player p)
+	{
+		System.out.println("It is " + p.getName() + "'s turn");
+		int dicePlayer = rollDices();
+		System.out.println(dicePlayer + " what " + p.getName() + " rolled");
+		p.setPositAfterRolledDice(dicePlayer);
+	}
+
+
+	private void infoPlayer (Player p1, Player p2, ChanceDeck[]  chanceCardDeck, LooseChange looseChange) throws BankruptException
+	{
+		if(p1.getTurn())
+		{
+			System.out.println(board[player1.getPosit()].toString());
+			System.out.println(player1.getName() +"'s money " + player1.getBankAccount());
+			board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
+			System.out.print("\n\n");
+		}
+		else if (p2.getTurn())
+		{
+			System.out.println(board[player2.getPosit()].toString());
+			System.out.println(player2.getName() +"'s money " + player2.getBankAccount());
+			board[player2.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
+			System.out.print("\n\n");
+		}
+	}
+
+	private int rollDices()
 	{
 		int dice1 = random.nextInt(6) + 1;
 
 		return dice1;
 	}
 
-	public void playerTurn (int counter, Player p1, Player p2)
+	private void playerTurn (int counter, Player p1, Player p2)
 	{
 		if(counter % 2 != 0)
 		{

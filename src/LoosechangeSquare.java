@@ -14,18 +14,20 @@ public class LoosechangeSquare extends MonopolySquare {
     {
         if(P1.getTurn())
         {
-            System.out.println("Nice, you landed on loosechange. Now you have " + looseChange.getBalance() +
-                    " in your account.");
-            P1.addMoney(looseChange.getBalance());
-            looseChange.setBalance(0);
+            addingMoney(P1, looseChange);
         }
         else if (P2.getTurn())
         {
-            System.out.println("Nice, you landed on loosechange. Now you have " + looseChange.getBalance() +
-                    " in your account.");
-            P2.addMoney(looseChange.getBalance());
-            looseChange.setBalance(0);
+            addingMoney(P2, looseChange);
         }
+    }
+
+    private void addingMoney (Player p, LooseChange looseChange)
+    {
+        System.out.println("Nice, you landed on loosechange. Now you have " + looseChange.getBalance() +
+                " in your account.");
+        p.addMoney(looseChange.getBalance());
+        looseChange.setBalance(0);
     }
 
     @Override

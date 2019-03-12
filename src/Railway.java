@@ -15,22 +15,17 @@ public class Railway extends MonopolySquare {
     //The method will make to roll again the player and chance the position.
     public void landOn(Player P1, Player P2, ChanceDeck[] chanceDeck, LooseChange looseChange) throws BankruptException
     {
-        if(P1.getTurn())
-        {
-            System.out.println("Nice. You can roll again.");
-            int againDice = rollDices();
-            int newPosti = againDice + P1.getPosit();
-            System.out.println("You rolled " + againDice);
-            P1.setPosit(newPosti);
-        }
-        else if (P2.getTurn())
-        {
-            System.out.println("Nice. You can roll again.");
-            int againDice = rollDices();
-            int newPosti = againDice + P2.getPosit();
-            System.out.println("You rolled " + againDice);
-            P2.setPosit(newPosti);
-        }
+        if(P1.getTurn()) { newPostInfo(P1); }
+        else if (P2.getTurn()) { newPostInfo(P2); }
+    }
+
+    private void newPostInfo (Player p)
+    {
+        System.out.println("Nice. You can roll again.");
+        int againDice = rollDices();
+        int newPosti = againDice + p.getPosit();
+        System.out.println("You rolled " + againDice);
+        p.setPosit(newPosti);
     }
 
     @Override
