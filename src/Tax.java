@@ -2,7 +2,6 @@ public class Tax extends MonopolySquare {
 
     private int payTax = 2;
     private int squareNum;
-    private int afterTax;
 
     public Tax (String name, int num){
         super(name);
@@ -15,39 +14,29 @@ public class Tax extends MonopolySquare {
     {
         if (P1.getTurn())
         {
-            afterTax = P1.getBankAccount() - payTax;
-
-            if(afterTax <= 0)
-            {
-                System.out.println("Opps, out of money!. You lost");
-                throw new BankruptException("Opps, out of money!");
-            }
-            else
-            {
-                afterTax(P1, looseChange, afterTax);
-            }
+            afterTax(P1, looseChange);
         }
         else if (P2.getTurn())
         {
-            afterTax = P2.getBankAccount() - payTax;
-
-            if(afterTax <= 0)
-            {
-                System.out.println("Opps, out of money!. You lost");
-                throw new BankruptException("Opps, out of money!");
-            }
-            else
-            {
-                afterTax(P2, looseChange, afterTax);
-            }
+            afterTax(P2, looseChange);
         }
 
     }
-    private void afterTax (Player p, LooseChange looseChange, int afterTax)
+    private void afterTax (Player p, LooseChange looseChange) throws BankruptException
     {
-        System.out.println("Upps, you have to pay $2 of taxes that goes to loosechange.");
-        looseChange.setPlusBalance(payTax);
-        p.setBankAccount(afterTax);
+        int afterTax = p.getBankAccount() - payTax;
+
+        if(afterTax <= 0)
+        {
+            System.out.println("Opps, out of money!. You lost");
+            throw new BankruptException("Opps, out of money!");
+        }
+        else
+        {
+            System.out.println("Upps, you have to pay $2 of taxes that goes to loosechange.");
+            looseChange.setPlusBalance(payTax);
+            p.setBankAccount(afterTax);
+        }
     }
     @Override
     public String toString() {

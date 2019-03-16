@@ -144,15 +144,15 @@ public class MonopolyGame {
 		if(p1.getTurn())
 		{
 			System.out.println(board[player1.getPosit()].toString());
-			System.out.println(player1.getName() +"'s money " + player1.getBankAccount());
 			board[player1.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
+			System.out.println(player1.getName() +"'s money " + player1.getBankAccount());
 			System.out.print("\n\n");
 		}
 		else if (p2.getTurn())
 		{
 			System.out.println(board[player2.getPosit()].toString());
-			System.out.println(player2.getName() +"'s money " + player2.getBankAccount());
 			board[player2.getPosit()].landOn(player1,player2,chanceCardDeck, looseChange);
+			System.out.println(player2.getName() +"'s money " + player2.getBankAccount());
 			System.out.print("\n\n");
 		}
 	}

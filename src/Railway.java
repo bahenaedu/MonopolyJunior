@@ -23,9 +23,9 @@ public class Railway extends MonopolySquare {
     {
         System.out.println("Nice. You can roll again.");
         int againDice = rollDices();
-        int newPosti = againDice + p.getPosit();
+        int newPost = againDice + p.getPosit();
         System.out.println("You rolled " + againDice);
-        p.setPosit(newPosti);
+        p.setPosit(newPost);
     }
 
     @Override

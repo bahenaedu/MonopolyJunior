@@ -190,6 +190,8 @@ public class ChanceSquare extends MonopolySquare {
     }
 
     private void restOfCards (Player movingPlayer, Player notMovingPlayer, String color, String propertyNameOne, String propertyNameTwo, int firstPostOfColor, int secondPostOfColor)
+    //For the cards 16 to 24 will check if the-not-moving-player owens one or both of the property colors and the one that is not owned will go to the one
+    //moving-player.
     {
         int counter = 0;
         for (int x = 0; x < notMovingPlayer.ownedProperties.size(); x++)

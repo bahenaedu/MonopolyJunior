@@ -55,12 +55,14 @@ public class Player {
 	}
 
 	public void addProperty (int numOfProperty, String color)
+	//adding property to the player. I needs the post on the board and the color it belongs.
 	{
 		ownedProperties.add(numOfProperty);
 		colorOfProperty.add(color);
 	}
 
 	public boolean checkForProperty (int newProperty)
+	//Checking if player owens the property
 	{
 		for(int x = 0; x < this.ownedProperties.size(); x++)
 		{

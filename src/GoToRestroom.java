@@ -1,3 +1,5 @@
+import java.util.Currency;
+
 public class GoToRestroom extends MonopolySquare{
 
     private int squareNum;
@@ -15,40 +17,34 @@ public class GoToRestroom extends MonopolySquare{
     {
         if(P1.getTurn())
         {
-            int afterFee = P1.getBankAccount() - 3;
-            if (afterFee <= 0)
-            {
-                System.out.println("Ops You ran out of money. You lost.");
-                throw new BankruptException("Ops No money");
-            }
-            else
-            {
-                System.out.println("I am sorry. You need to move to restroom and pay $3 to loosechange.");
-                P1.setBankAccount(P1.getBankAccount() - 3);
-                looseChange.setPlusBalance(3);
-                P1.setPosit(10);
-            }
+            payFee(P1, looseChange);
         }
         else if (P2.getTurn())
         {
-            int afterFee = P2.getBankAccount() - 3;
-            if (afterFee <= 0)
-            {
-                System.out.println("Ops You ran out of money. You lost.");
-                throw new BankruptException("Ops No money");
-            }
-            else
-            {
-                System.out.println("I am sorry. You need to move to restroom and pay $3 to loosechange.");
-                P2.setBankAccount(P2.getBankAccount() - 3);
-                looseChange.setPlusBalance(3);
-                P2.setPosit(10);
-            }
+           payFee(P2, looseChange);
         }
     }
 
     @Override
     public String toString() {
         return "You landed on " + name;
+    }
+
+    public void payFee (Player currentPlayer, LooseChange looseChange) throws BankruptException
+    //The function will take care of the fee the player has to pay to loosechange. Also checking that the player have enough funds.
+    {
+        int afterFee = currentPlayer.getBankAccount() - 3;
+        if (afterFee <= 0)
+        {
+            System.out.println("Ops You ran out of money. You lost.");
+            throw new BankruptException("Ops No money");
+        }
+        else
+        {
+            System.out.println("I am sorry. You need to move to restroom and pay $3 to loosechange.");
+            currentPlayer.setBankAccount(currentPlayer.getBankAccount() - 3);
+            looseChange.setPlusBalance(3);
+            currentPlayer.setPosit(10);
+        }
     }
 }

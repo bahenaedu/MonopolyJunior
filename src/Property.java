@@ -21,48 +21,19 @@ public class Property extends MonopolySquare {
             {
                 System.out.println("You already have this property");
             }
-            else if (ownershipPlayers(squareNum, P1, P2))
+            else if (ownershipPlayers(squareNum, P2))
             {
-
-                int minusValueOfProperty = P1.getBankAccount() - priceOfProperties(this.propertyColor);
-                if (minusValueOfProperty <= 0)
-                {
-                    System.out.println(P1.getName() + ", sorry. You ran out of money. You lost.");
-                    throw new BankruptException("Opps");
-                }
-                else
-                {
-                    System.out.println("Congratulation. You bought " + this.propertyColor + ": "+ this.name);
-                    P1.addProperty(this.squareNum, this.propertyColor);
-                    P1.setBankAccount(minusValueOfProperty);
-                }
+                oneProperty(P1);
             }
             else
             {
                 if (playerOwensTwo(P2, this.propertyColor))
                 {
-                    int doublePrice = priceOfProperties(this.propertyColor) * 2;
-                    System.out.println("Sorry. " + P2.getName() + " already owens both " + this.propertyColor + "'s" +
-                            ". You have to paid double of " + priceOfProperties(this.propertyColor));
-                    P2.addMoney(doublePrice);
-                    P1.setBankAccount(P1.getBankAccount() - doublePrice);
-                    if (P1.getBankAccount() <= 0)
-                    {
-                        System.out.println(P1.getName() + ", sorry. You ran out of money. You lost.");
-                        throw new BankruptException("Opps");
-                    }
+                    ifOtherPlayerOwensBoth(P1, P2);
                 }
                 else if (!playerOwensTwo(P2, this.propertyColor))
                 {
-                    System.out.println("Sorry. " + P2.getName() + " already owens " + this.propertyColor + ": " + this.name +
-                            ". You have to paid " + priceOfProperties(this.propertyColor));
-                    P2.addMoney(priceOfProperties(this.propertyColor));
-                    P1.setBankAccount(P1.getBankAccount() - priceOfProperties(this.propertyColor));//address the problem of two of the same property. Arraylist of colors to compare
-                    if (P1.getBankAccount() <= 0)
-                    {
-                        System.out.println(P1.getName() + ", sorry. You ran out of money. You lost.");
-                        throw new BankruptException("Opps");
-                    }
+                    ifOtherPlayerOwensOne(P1, P2);
                 }
             }
         }
@@ -72,47 +43,19 @@ public class Property extends MonopolySquare {
             {
                 System.out.println("You already have this property");
             }
-            else if (ownershipPlayers(squareNum, P1, P2))
+            else if (ownershipPlayers(squareNum, P1))
             {
-                int minusValueOfProperty = P2.getBankAccount() - priceOfProperties(this.propertyColor);
-                if (minusValueOfProperty <= 0)
-                {
-                    System.out.println(P2.getName() + ", sorry. You ran out of money. You lost.");
-                    throw new BankruptException("Opps");
-                }
-                else
-                {
-                    System.out.println("Congratulation. You bought " + this.propertyColor + ": "+ this.name);
-                    P2.addProperty(this.squareNum, this.propertyColor);
-                    P2.setBankAccount(minusValueOfProperty);
-                }
+                oneProperty(P2);
             }
             else
             {
                 if (playerOwensTwo(P1, this.propertyColor))
                 {
-                    int doublePrice = priceOfProperties(this.propertyColor) * 2;
-                    System.out.println("Sorry. " + P1.getName() + " already owens both " + this.propertyColor + "'s" +
-                            ". You have to paid double of " + priceOfProperties(this.propertyColor));
-                    P1.addMoney(doublePrice);
-                    P2.setBankAccount(P2.getBankAccount() - doublePrice);
-                    if (P2.getBankAccount() <= 0)
-                    {
-                        System.out.println(P2.getName() + ", sorry. You ran out of money. You lost.");
-                        throw new BankruptException("Opps");
-                    }
+                    ifOtherPlayerOwensBoth(P2, P1);
                 }
                 else if (!playerOwensTwo(P1, this.propertyColor))
                 {
-                    System.out.println("Sorry. " + P1.getName() + " already owens " + this.propertyColor + ": " + this.name +
-                            ". You have to paid " + priceOfProperties(this.propertyColor));
-                    P1.addMoney(priceOfProperties(this.propertyColor));
-                    P2.setBankAccount(P2.getBankAccount() - priceOfProperties(this.propertyColor));//address the problem of two of the same property. Arraylist of colors to compare
-                    if (P2.getBankAccount() <= 0)
-                    {
-                        System.out.println(P2.getName() + ", sorry. You ran out of money. You lost.");
-                        throw new BankruptException("Opps");
-                    }
+                    ifOtherPlayerOwensOne(P2, P1);
                 }
             }
         }
@@ -123,28 +66,61 @@ public class Property extends MonopolySquare {
         return "You landed on "+ this.propertyColor + ": " + this.name;
     }
 
-    private boolean ownershipPlayers (int squareNum, Player P1, Player P2) //if the other player owns the property it will return false
+    private void ifOtherPlayerOwensOne (Player movingPlayer, Player notMovingPlayer) throws BankruptException
+    //This function will give a message saying how thenotturnplayer owens one property.
     {
-      if (P1.getTurn())
-      {
-          for (int x = 0; x < P2.ownedProperties.size(); x++)
+        System.out.println("Sorry. " + notMovingPlayer.getName() + " already owens " + this.propertyColor + ": " + this.name +
+                ". You have to paid " + priceOfProperties(this.propertyColor));
+        notMovingPlayer.addMoney(priceOfProperties(this.propertyColor));
+        movingPlayer.setBankAccount(movingPlayer.getBankAccount() - priceOfProperties(this.propertyColor));//address the problem of two of the same property. Arraylist of colors to compare
+        if (movingPlayer.getBankAccount() <= 0)
+        {
+            System.out.println(movingPlayer.getName() + ", sorry. You ran out of money. You lost.");
+            throw new BankruptException("Opps");
+        }
+    }
+
+    private void ifOtherPlayerOwensBoth (Player movingPlayer, Player notMovingPlayer) throws BankruptException
+    //This function will give a message saying how thenotturnplayer owens both property.
+    {
+        int doublePrice = priceOfProperties(this.propertyColor) * 2;
+        System.out.println("Sorry. " + notMovingPlayer.getName() + " already owens both " + this.propertyColor + "'s" +
+                ". You have to paid double of " + priceOfProperties(this.propertyColor));
+        notMovingPlayer.addMoney(doublePrice);
+        movingPlayer.setBankAccount(movingPlayer.getBankAccount() - doublePrice);
+        if (movingPlayer.getBankAccount() <= 0) {
+            System.out.println(movingPlayer.getName() + ", sorry. You ran out of money. You lost.");
+            throw new BankruptException("Opps");
+        }
+    }
+
+    private void oneProperty (Player playerTurn) throws BankruptException
+    //The function will send a message saying that the current player owens the property or it can be bought.
+    {
+        int minusValueOfProperty = playerTurn.getBankAccount() - priceOfProperties(this.propertyColor);
+        if (minusValueOfProperty <= 0)
+        {
+            System.out.println(playerTurn.getName() + ", sorry. You ran out of money. You lost.");
+            throw new BankruptException("Opps");
+        }
+        else
+        {
+            System.out.println("Congratulation. You bought " + this.propertyColor + ": "+ this.name);
+            playerTurn.addProperty(this.squareNum, this.propertyColor);
+            playerTurn.setBankAccount(minusValueOfProperty);
+        }
+    }
+
+    private boolean ownershipPlayers (int squareNum, Player notMoving) //if the other player owns the property it will return false
+    {
+        for (int x = 0; x < notMoving.ownedProperties.size(); x++)
           {
-              if (P2.ownedProperties.get(x).equals(squareNum))
+              if (notMoving.ownedProperties.get(x).equals(squareNum))
               {
                   return false;
               }
           }
-      }
-      else if (P2.getTurn())
-      {
-          for (int x = 0; x < P1.ownedProperties.size(); x++)
-          {
-              if (P1.ownedProperties.get(x).equals(squareNum))
-              {
-                  return false;
-              }
-          }
-      }
+
       return true;
     }
 
